@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[table]{xcolor}
+\definecolor{azulCeleste}{HTML}{00ADEF}
+
+\title{refetencias}
+\author{cristopher diaz}
+\date{May 2026}
+
+\begin{document}
+    
+\maketitle
+
+\section{Referencias}
+\centering
+    \renewcommand{\arraystretch}{1.8} % Le da altura y elegancia a las celdas
+    \setlength{\tabcolsep}{12pt}      % Espacio entre columnas
+    
+    \begin{tabular}{lllll} % 'l' significa alineado a la izquierda (left)
+        \rowcolor{azulCeleste} % Pinta la fila de azul
+        \textbf{\color{white}Instrucción} & 
+        \textbf{\color{white}Ejemplo} & 
+        \textbf{\color{white}Significado} & 
+        \textbf{\color{white}Comentario} \\
+        
+        % Aquí empieza el contenido (puedes borrar estas líneas si solo quieres la barra)
+        add & add \$s1,\$s2,\$s3  & \$sl = \$s1 = \$s2  & tres operando: dato en registro \\
+        addi & addi \$s1,\$s2,\$s3  & \$s1 = \$s2 + 100 &  usado para sumar constantes \\
+        lw & lw \$s1,100(\$s2)  & \$s1 = Memory[\$s2 + 100] &  memoria de registro \\
+        sw & sw \$s1,100(\$s2)  &  Memory[\$s2 + 100] =\$s1 &  media palabra de rgistro de memoria\\
+        sll & sll \$s1,\$s2,10  & \$s1 = \$s2 << 10 &  desplazamiento de la constante a la izquierda \\
+         srl & srl \$s1,\$s2,10  & \$s1 = \$s2 >> 10 &  desplazamiento de la constante a la derecha\\
+        beq & beq \$s1,\$s2,L  & if(\$s1 == \$s2)go to L PC+4+100 &  comprueba la bifurcacion e igualdad relativo al pc \\
+        bne & bne \$s1,\$s2,L  & if(\$s1 != \$s2)go to L PC+4+100 &  se comprueba la desigualdad y bifurcacion relativa al pc \\
+        slt & slt \$s1,\$s2,\$s3  & if(\$s2 < \$s3) \$s1 = 1; else \$s1=0 &  comprueba si es menor que ; usado con beq, bne \\
+        slti & slti \$s1,\$s2,100  & if(\$s2 < 100 )\$s1 = 1; else \$s1 = 0 &  comparar si es menor que una constante \\
+        j & j 2500  & go to 100000 &  salto de direccion destino  \\
+    \end{tabular}
+\end{document}
